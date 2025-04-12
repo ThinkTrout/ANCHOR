@@ -1,26 +1,46 @@
 @font-face {
     font-family: 'PPFraktionMono';
     src: url('/static/fonts/PPFraktionMono-Regular.otf') format('opentype');
-    font-weight: normal;
-    font-style: normal;
+}
+
+@font-face {
+    font-family: 'KHInterference';
+    src: url('/static/fonts/KHInterference-Regular.otf') format('opentype');
+}
+
+.title {
+    font-family: 'PPFraktionMono', monospace;
+    letter-spacing: -10px;
+    font-size: 100px;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 0px;
 }
 
 body {
     font-family: 'PPFraktionMono', monospace;
     letter-spacing: -1px;
-    background-color: #f0f0f0;
-    color: #333;
+    background-color: #ffffff;
+    color: #000000;
     text-align: center;
     margin-top: 50px;
 }
 
-/* Style for the blue square */
-.custom-cursor {
-    width: 50px;
-    height: 50px;
-    background-color: #3a9cff;
-    position: absolute;
-    pointer-events: none; /* Prevent the square from blocking clicks */
-    transform: translate(0, 0); /* For smooth movement */
-    transition: transform 0.1s ease-out; /* Smooth transition */
+.button {
+    font-family: 'KHInterference', monospace;
+    background-color: #000000;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    transition: transform 0.1s ease-out; /* Apply transition here */
+}
+
+.button:hover {
+    transform: scale(1.2);
 }
