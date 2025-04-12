@@ -12,7 +12,7 @@ As a **Diver**, a heavily-armed special unit equipped to deal with the supernatu
 
 You will come across **Coral Structures**, physical manifestations of human thoughts that grow at unpredictable rates influenced by the mental stability of humans near them.
 
-Toe assist you, you will be equipped with all manner of guns and equipment to navigate Coral-infested buildings, repair unstable pockets of reality, and investigate the secrets of private military companies that have their own interests in the **Reef**.
+To assist you, you will be equipped with all manner of guns and equipment to navigate Coral-infested buildings, repair unstable pockets of reality, and investigate the secrets of private military companies that have their own interests in the **Reef**.
 
 **The Reef awaits, Diver. How will *you* navigate its waters?**
 
