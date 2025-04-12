@@ -24,9 +24,9 @@ To assist you, you will be equipped with all manner of guns and equipment to nav
 3. Click **Create codespace on main**
 5. Wait forever for it to load.
 
-Open a new terminal (CTRL+SHIFT+C) and install Flask:
+Open a new terminal (CTRL+SHIFT+C) and install Flask and any other requirements:
 ```
-pip install flask
+pip install -r requirements.txt
 ```
 
 Run app.py or simply run this code in the terminal:
