@@ -1,7 +1,26 @@
+@font-face {
+    font-family: 'PPFraktionMono';
+    src: url('/static/fonts/PPFraktionMono-Regular.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'PPFraktionMono', monospace;
+    letter-spacing: -1px;
     background-color: #f0f0f0;
     color: #333;
     text-align: center;
     margin-top: 50px;
+}
+
+/* Style for the blue square */
+.custom-cursor {
+    width: 50px;
+    height: 50px;
+    background-color: #3a9cff;
+    position: absolute;
+    pointer-events: none; /* Prevent the square from blocking clicks */
+    transform: translate(0, 0); /* For smooth movement */
+    transition: transform 0.1s ease-out; /* Smooth transition */
 }

@@ -6,7 +6,35 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='menu.css') }}">
 </head>
 <body>
-    <h1>Welcome to ANCHOR.</h1>
-    <p>THE REEF AWAITS, DIVER. . .</p>
+    <h1>WELCOME TO <span style="color: #3a9cff;">ANCHOR</span>.</h1>
+    <p>THE REEF AWAITS, <em>DIVER</em>. . .</p>
+
+    <!-- Blue square for custom cursor -->
+    <div class="custom-cursor" id="customCursor"></div>
+
+    <script>
+        // JavaScript to add lag effect to the blue square
+        const customCursor = document.getElementById('customCursor');
+        let mouseX = 0, mouseY = 0; // Mouse position
+        let cursorX = 0, cursorY = 0; // Cursor position
+
+        // Update mouse position on mousemove
+        document.addEventListener('mousemove', (event) => {
+            mouseX = event.pageX;
+            mouseY = event.pageY;
+        });
+
+        // Smoothly interpolate cursor position
+        function animateCursor() {
+            cursorX += (mouseX - cursorX) * 0.1; // Adjust the 0.1 for more/less lag
+            cursorY += (mouseY - cursorY) * 0.1;
+
+            customCursor.style.transform = `translate(${cursorX}px, ${cursorY-150}px)`;
+
+            requestAnimationFrame(animateCursor); // Keep the animation running
+        }
+
+        animateCursor(); // Start the animation loop
+    </script>
 </body>
 </html>
