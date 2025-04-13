@@ -54,6 +54,7 @@ Type in the verification code that Vercel gives you in your browser.
 cd api
 vercel
 ```
-Follow the prompts.\
+Follow the prompts to complete setup. Then open the link to see your Vercel app.\
+You can change or add custom domains in the Vercel website.
 
 In the future, all edits to game logic should be made in **app.py**.
