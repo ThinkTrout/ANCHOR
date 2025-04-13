@@ -6,13 +6,21 @@
 
 The **Reef** is a dimension shaped by collective human thought. Until the **Flood**, we never knew of its existence.
 
-The year is 2081. 50 years ago, the **Flood** caused the metaphysical barrier between our reality and the **Reef** to break down, causing a global catastrophe that resulted in irreversible damage to modern infrastructure and society as we know it.
+The year is **2081**. 50 years ago, an event known as the **Flood** caused the metaphysical barrier between our reality and the **Reef** to break down, causing a global catastrophe that resulted in irreversible damage to modern infrastructure and society as we know it.
 
-As a **Diver**, a heavily-armed special unit equipped to deal with the supernatural hostility of **Shallow Waters**, zones where the **Reef** bleeds into our reality, you will be sent to explore and investigate these zones.
+As a **Diver**, a heavily-armed special unit trained to deal with the supernatural hostility of **Shallow Waters**—zones where the **Reef** bleeds into our reality—you will be sent to explore and investigate these zones.
 
-You will come across **Coral Structures**, physical manifestations of human thoughts that grow at unpredictable rates influenced by the mental stability of humans near them.
+**Explore Shallow Waters**\
+Navigate zones where the Reef merges with reality, uncovering its secrets and dangers.
 
-To assist you, you will be equipped with all manner of guns and equipment to navigate Coral-infested buildings, repair unstable pockets of reality, and investigate the secrets of private military companies that have their own interests in the **Reef**.
+**Face Coral Structures**\
+Encounter rapidly growing manifestations of human thought that infest and rewrite reality itself.
+
+**Combat Supernatural Threats**\
+Use a variety of weapons and equipment to fight hostile entities and repair unstable pockets of reality.
+
+**Uncover Hidden Agendas**\
+Investigate the secrets of private military companies with their own interests in the Reef.
 
 **The Reef awaits, Diver. How will *you* navigate its waters?**
 
