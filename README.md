@@ -14,13 +14,13 @@ As a **Diver**, a heavily-armed special unit trained to deal with the supernatur
 Navigate zones where the Reef merges with reality, uncovering its secrets and dangers.
 
 **Face Coral Structures**\
-Encounter rapidly growing manifestations of human thought that infest and rewrite reality itself.
+Encounter rapidly growing physical manifestations of human thought that infest and rewrite reality itself.
 
 **Combat Supernatural Threats**\
 Use a variety of weapons and equipment to fight hostile entities and repair unstable pockets of reality.
 
 **Uncover Hidden Agendas**\
-Investigate the secrets of private military companies with their own interests in the Reef.
+Investigate the secrets of different factions with their own interests in the Reef.
 
 **The Reef awaits, Diver. How will *you* navigate its waters?**
 
@@ -41,7 +41,7 @@ Alternatively, go to **Ports** and click the Globe icon to run the game in your 
 
 ## How to deploy to Vercel
 
-**NOTE: I AM NOT 100% SURE THIS WILL WORK. I AM STILL NEW TO ALL THIS.**
+**NOTE: I AM NOT 100% SURE THIS WILL WORK.**
 
 Make sure you have a Vercel account.\
 Run these commands in the terminal:
@@ -55,9 +55,5 @@ cd api
 vercel
 ```
 Follow the prompts.\
-In the future, all edits should be made in **app.py**.
 
-To update your Vercel deployment, make sure all edits have been committed and type this into the terminal:
-```
-vercel --prod
-```
+In the future, all edits to game logic should be made in **app.py**.
