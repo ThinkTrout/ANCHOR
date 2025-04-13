@@ -24,9 +24,9 @@ Investigate the secrets of private military companies with their own interests i
 
 **The Reef awaits, Diver. How will *you* navigate its waters?**
 
-## How to Clone and Run
+## How to Run
 
-1. Clone the repository.
+1. Fork the repository.
 2. Click **Code**
 3. Click **Codespaces**
 3. Click **Create codespace on main**
@@ -43,7 +43,3 @@ python app.py
 ```
 Click **Open in browser** when the prompt comes up.\
 Alternatively, go to **Ports** and click the Globe icon to run the game in your browser.
-
-If the prompt doesn't come up, go to **Ports** and click **Add Port** and type **5000** in the Port Number box.
-
-Then click the Globe icon to run the game in your browser.

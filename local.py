@@ -1,5 +1,5 @@
 # api/local.py
-from app import app
+from api.app import app
 
 if __name__ == '__main__':
     app.run(debug=True, port=5000)
