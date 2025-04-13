@@ -8,39 +8,62 @@
     src: url('/static/fonts/KHInterference-Regular.otf') format('opentype');
 }
 
-.title {
+.title, body, .copyrights, .links {
     font-family: 'PPFraktionMono', monospace;
+}
+
+.title {
     letter-spacing: -10px;
     font-size: 100px;
-    text-align: center;
-    margin-top: 20px;
-    margin-bottom: 0px;
+    margin: 20px 0 0;
 }
 
 body {
-    font-family: 'PPFraktionMono', monospace;
     letter-spacing: -1px;
-    background-color: #ffffff;
-    color: #000000;
-    text-align: center;
+    background-color: #fff;
+    color: #000;
     margin-top: 50px;
+    text-align: center;
 }
 
 .button {
     font-family: 'KHInterference', monospace;
-    background-color: #000000;
-    color: #ffffff;
+    background-color: #000;
+    color: #fff;
     border: none;
     padding: 10px 20px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
     font-size: 16px;
-    margin: 4px 2px;
     cursor: pointer;
-    transition: transform 0.1s ease-out; /* Apply transition here */
+    transition: transform 0.1s ease-out;
 }
 
 .button:hover {
-    transform: scale(1.2);
+    text-decoration: underline;
+    text-decoration-thickness: 0.5px;
+    text-decoration-color: #ffffff;
+}
+
+.copyrights, .links {
+    font-size: 12px;
+    position: absolute;
+    bottom: 20px;
+}
+
+.copyrights {
+    left: 20px;
+}
+
+.links {
+    right: 20px;
+}
+
+.links a {
+    margin: 0 10px;
+    color: inherit;
+    text-decoration: none;
+}
+
+.links a:hover {
+    text-decoration: underline;
+    text-decoration-thickness: 0.5px;
 }
