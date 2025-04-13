@@ -24,7 +24,7 @@ Investigate the secrets of private military companies with their own interests i
 
 **The Reef awaits, Diver. How will *you* navigate its waters?**
 
-## How to Run
+## How to Run on Local Port
 
 1. Fork the repository.
 2. Click **Code**
@@ -32,14 +32,32 @@ Investigate the secrets of private military companies with their own interests i
 3. Click **Create codespace on main**
 5. Wait forever for it to load.
 
-Open a new terminal (CTRL+SHIFT+C) and install Flask and any other requirements:
+Run local.py or simply run this code in the terminal:
 ```
-pip install -r requirements.txt
-```
-
-Run app.py or simply run this code in the terminal:
-```
-python app.py
+python local.py
 ```
 Click **Open in browser** when the prompt comes up.\
 Alternatively, go to **Ports** and click the Globe icon to run the game in your browser.
+
+## How to deploy to Vercel
+
+**NOTE: I AM NOT 100% SURE THIS WILL WORK. I AM STILL NEW TO ALL THIS.**
+
+Make sure you have a Vercel account.\
+Run these commands in the terminal:
+```
+npm install -g vercel
+vercel login
+```
+Type in the verification code that Vercel gives you in your browser.
+```
+cd api
+vercel
+```
+Follow the prompts.\
+In the future, all edits should be made in **app.py**.
+
+To update your Vercel deployment, make sure all edits have been committed and type this into the terminal:
+```
+vercel --prod
+```
