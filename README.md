@@ -9,12 +9,15 @@
 3. Click **Create codespace on main**
 5. Wait forever for it to load.
 
-Run local.py or simply run this code in the terminal:
+Open a new terminal (CTRL+SHIFT+C)\
+Run this code in the terminal:
 ```
 python local.py
 ```
 Click **Open in browser** when the prompt comes up.\
 Alternatively, go to **Ports** and click the Globe icon to run the game in your browser.
+
+You can make uncommitted edits and refresh this local port to see your live edits. When you are satisfied, you can commit later.
 
 ## How to deploy to Vercel
 
