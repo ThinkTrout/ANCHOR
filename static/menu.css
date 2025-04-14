@@ -46,15 +46,15 @@ body {
     text-decoration: underline;
 }
 
-.topleft, .copyrights, .links {
+.middle, .copyrights, .links {
     font-size: 12px;
     position: absolute;
     line-height: 1;
 }
 
-.topleft {
+.middle {
     top: 20px;
-    left: 20px;
+    right: 20px;
 }
 
 .copyrights {
