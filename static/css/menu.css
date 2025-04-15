@@ -76,3 +76,31 @@ body {
 .links a:hover {
     text-decoration: underline;
 }
+
+/* Fade-out animation */
+.fade-out {
+    animation: fadeOut 0.5s forwards;
+}
+
+/* Fade-in animation */
+.fade-in {
+    animation: fadeIn 1s forwards;
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}

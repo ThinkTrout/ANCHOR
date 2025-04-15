@@ -3,36 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>ANCHOR</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='menu.css') }}">
-    <style>
-        /* Fade-out animation */
-        .fade-out {
-            animation: fadeOut 0.5s forwards;
-        }
-
-        /* Fade-in animation */
-        .fade-in {
-            animation: fadeIn 1s forwards;
-        }
-
-        @keyframes fadeOut {
-            from {
-                opacity: 1;
-            }
-            to {
-                opacity: 0;
-            }
-        }
-
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
-            to {
-                opacity: 1;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/menu.css') }}">
 </head>
 <body>
     <div id="content" class="fade-in">
@@ -47,28 +18,7 @@
             <br>TIMEZONE <span style="margin-left: 100px; float: right;" id="timezone"></span>
             <br>DAY <span style="margin-left: 100px; float: right;" id="day-of-week"></span>
             <br>LANGUAGE <span style="margin-left: 100px; float: right;" id="browser-language"></span>
-
-            <script>
-                document.getElementById('timezone').textContent = Intl.DateTimeFormat().resolvedOptions().timeZone.toUpperCase();
-                document.getElementById('browser-language').textContent = navigator.language.toUpperCase();
-
-                function updateTime() {
-                    const now = new Date();
-                    const options = { year: 'numeric', month: 'short', day: 'numeric' };
-                    let formattedDate = now.toLocaleDateString('en-US', options).toUpperCase();
-                    formattedDate = formattedDate.replace(',', ''); // Remove comma between day and year
-                    formattedDate = formattedDate.replace(
-                        formattedDate.split(' ')[1],
-                        formattedDate.split(' ')[1].slice(0, 3)
-                    );
-                    document.getElementById('current-date').textContent = formattedDate;
-                    document.getElementById('current-time').textContent = now.toLocaleTimeString();
-                    const daysOfWeek = ['SUNDAY', 'MONDAY', 'TUESDAY', 'WEDNESDAY', 'THURSDAY', 'FRIDAY', 'SATURDAY'];
-                    document.getElementById('day-of-week').textContent = daysOfWeek[now.getDay()];
-                }
-                setInterval(updateTime, 1000);
-                updateTime();
-            </script>
+            <script src="{{ url_for('static', filename='js/realinfo.js') }}"></script>
         </p>
         <p class="copyrights">
             <br>COPYRIGHT ©2025 THINKTROUT STUDIO.

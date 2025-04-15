@@ -1,0 +1,65 @@
+@font-face {
+    font-family: 'PPFraktionMono';
+    src: url('/static/fonts/PPFraktionMono-Regular.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'KHInterference';
+    src: url('/static/fonts/KHInterference-Regular.otf') format('opentype');
+}
+
+body {
+    font-family: 'PPFraktionMono', monospace;
+    letter-spacing: -1px;
+    background: #fff;
+    color: #000000;
+}
+
+/* Game space and typewriter styles */
+.game-space {
+    position: absolute; /* Absolute positioning */
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Offset by 50% to exactly center */
+    width: 750px; /* width of the square */
+    height: 750px; /* height of the square */
+    border: 2px solid #000000; /* the square outline */
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+    justify-content: center; /* Center content vertically */
+    align-items: center; /* Center content horizontally */
+}
+
+/* Typewriter text styles */
+.typewriter {
+    max-width: 40ch; /* wraps after ~40 characters */
+    overflow-wrap: break-word;
+    position: relative;
+    line-height: 1;
+    white-space: pre-line;
+    font-size: 12px;
+    visibility: hidden;
+    color: #000;
+    text-align: justify;
+}
+
+/* Button styles */
+.button {
+    font-family: 'KHInterference', monospace;
+    background: #000;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    display: block;
+    text-align: center;
+    margin-top: 20px; /* Add space between text and button */
+    opacity: 0; /* Start with the button hidden */
+    pointer-events: none; /* Disable button until it's visible */
+    transition: opacity 1s ease; /* Smooth fade-in transition */
+}
+
+.button:hover {
+    text-decoration: underline;
+}

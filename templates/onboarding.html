@@ -3,59 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <title>ANCHOR</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='onboarding.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/onboarding.css') }}">
 </head>
 <body>
-    <p class="typewriter">
-        IDEOFLUID TEMP: 22.0°C
-        IDEOFLUID MOBILITY: LOW
-    
-        OXYGEN LEVELS: 98% (3hr49m REMAINING)
-        HEART RATE: 74 BPM
-        EXTERNAL TEMP: 13.1°C
-        CORE TEMP: 37.1°C
-        MENTAL STATE: STABLE
-        EMOTIONAL SIGNATURE: CALM
-        THOUGHT CURRENT: CALM
-
-        ANCHOR STRENGTH: NORMAL
-        ANCHOR CHARGE: 88% (2h11m REMAINING)
-
-        CORAL GROWTH RATE: LATENT [0.03mm/hr]
-        PATTERN STATE: NON-AGGRESSIVE
-        ORIGIN PROFILE: TYPE B (Disassociative, Emotional)
-
-        TIDE PHASE: LOW
-        TEMPORAL FLOW: FORWARD
-        GRAVITY VARIANCE: -0.7%
-        LOCALIZED REALITY STRESS: NORMALIZED
-    </p>
-    <script>
-        window.addEventListener("DOMContentLoaded", () => {
-            const el = document.querySelector('.typewriter');
-            const text = el.innerHTML;  // Use the innerHTML for multi-line support
-            
-            const typingSpeed = 20; // 🕒 ms per character
-            const typingDelay = 500; // 💤 delay before typing (ms)
-        
-            // Hide the content initially
-            el.style.visibility = 'hidden';
-        
-            setTimeout(() => {
-                el.style.visibility = 'visible'; // Make the text visible once typing starts
-        
-                let i = 0;
-                el.innerHTML = ''; // Start with empty content
-        
-                const interval = setInterval(() => {
-                    el.innerHTML += text[i]; // Add one character at a time
-                    i++;
-            
-                    // Stop once all characters have been typed
-                    if (i === text.length) clearInterval(interval);
-                }, typingSpeed);
-            }, typingDelay); // Delay before typing starts
-        });
-    </script>
+    <div class="game-space">
+        <p class="typewriter" data-speed=1>
+            I, the undersigned, hereby agree to join the Department of Stability (DOS) as a Diver, undertaking to follow all directives, procedures, and safety protocols established by the Department in the pursuit of maintaining equilibrium within designated zones of interest. I acknowledge the inherent risks associated with field operations, including but not limited to environmental and psychological stressors, as well as unforeseen complications that may arise during deployment. I understand that my participation may involve exposure to volatile conditions, both external and internal, and that the nature of my duties requires a high level of adaptability, mental fortitude, and resilience. I accept the Department's right to modify operational procedures as deemed necessary for the security and stability of both personnel and assets. I further acknowledge that my actions and decisions may be subject to post-operation review and analysis, and that my employment may be terminated at any time should my performance or conduct fail to meet the Department's standards. I agree to maintain confidentiality regarding all aspects of the operation, including the nature, scope, and findings of missions assigned to me. By signing, I affirm my understanding of these terms and my commitment to upholding the Department's mission of stability, regardless of the challenges or complexities that may arise.
+        </p>
+        <button class="button" style="opacity: 0; pointer-events: none;">SIGN</button>
+    </div>
+    <script src="{{ url_for('static', filename='js/typewriter.js') }}"></script>
 </body>
 </html>
