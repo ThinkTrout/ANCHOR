@@ -12,11 +12,11 @@ body {
     font-family: 'PPFraktionMono', monospace;
     letter-spacing: -1px;
     background: #fff;
-    color: #000000;
+    color: #000;
 }
 
 /* Game space and typewriter styles */
-.game-space {
+.game-space.fade-in {
     position: absolute; /* Absolute positioning */
     top: 50%; /* Center vertically */
     left: 50%; /* Center horizontally */
@@ -28,6 +28,8 @@ body {
     flex-direction: column; /* Stack elements vertically */
     justify-content: center; /* Center content vertically */
     align-items: center; /* Center content horizontally */
+    animation: fadeIn 2s ease-in; /* Fade-in animation */
+    opacity: 1;
 }
 
 /* Typewriter text styles */
@@ -52,14 +54,43 @@ body {
     padding: 10px 20px;
     font-size: 16px;
     cursor: pointer;
+    margin: 50px auto 0;
     display: block;
     text-align: center;
-    margin-top: 20px; /* Add space between text and button */
+    transition: transform 0.2s ease, opacity 1s ease; /* Consolidated transitions */
     opacity: 0; /* Start with the button hidden */
     pointer-events: none; /* Disable button until it's visible */
-    transition: opacity 1s ease; /* Smooth fade-in transition */
 }
 
 .button:hover {
     text-decoration: underline;
+    transform: scale(1.05);
+}
+
+.button:active {
+    transform: scale(1); /* Return to original scale on click */
+}
+
+/* Fade-out animation */
+.fade-out {
+    animation: fadeOut 2s forwards;
+}
+
+/* Fade-in animation */
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
