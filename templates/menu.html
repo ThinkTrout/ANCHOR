@@ -4,55 +4,101 @@
     <meta charset="UTF-8">
     <title>ANCHOR</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='menu.css') }}">
+    <style>
+        /* Fade-out animation */
+        .fade-out {
+            animation: fadeOut 0.5s forwards;
+        }
+
+        /* Fade-in animation */
+        .fade-in {
+            animation: fadeIn 1s forwards;
+        }
+
+        @keyframes fadeOut {
+            from {
+                opacity: 1;
+            }
+            to {
+                opacity: 0;
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+    </style>
 </head>
 <body>
-    <p class="title">WELCOME TO <span style="color: #3a9cff;">ANCHOR</span>.</p>
-    <p class="subtitle">THE REEF AWAITS, <em>DIVER</em>. . . HOW WILL <em>YOU</em> NAVIGATE ITS WATERS?</p>
-    <button class="button">DIVE ↓</button>
-    <p class="middle">
-        <br>DATE <span style="margin-left: 100px; float: right;" id="current-date"></span>
-        <br>TIME <span style="margin-left: 100px; float: right;" id="current-time"></span>
-        <br>TIMEZONE <span style="margin-left: 100px; float: right;" id="timezone"></span>
-        <br>DAY <span style="margin-left: 100px; float: right;" id="day-of-week"></span>
-        <br>LANGUAGE <span style="margin-left: 100px; float: right;" id="browser-language"></span>
+    <div id="content" class="fade-in">
+        <p class="title">WELCOME TO <span style="color: #3a9cff;">ANCHOR</span>.</p>
+        <p class="subtitle">THE REEF AWAITS, <em>DIVER</em>. . . HOW WILL <em>YOU</em> NAVIGATE ITS WATERS?</p>
+        <button class="button" onclick="fadeOutAndRedirect()">
+            DIVE ↓
+        </button>
+        <p class="middle">
+            <br>DATE <span style="margin-left: 100px; float: right;" id="current-date"></span>
+            <br>TIME <span style="margin-left: 100px; float: right;" id="current-time"></span>
+            <br>TIMEZONE <span style="margin-left: 100px; float: right;" id="timezone"></span>
+            <br>DAY <span style="margin-left: 100px; float: right;" id="day-of-week"></span>
+            <br>LANGUAGE <span style="margin-left: 100px; float: right;" id="browser-language"></span>
 
+            <script>
+                document.getElementById('timezone').textContent = Intl.DateTimeFormat().resolvedOptions().timeZone.toUpperCase();
+                document.getElementById('browser-language').textContent = navigator.language.toUpperCase();
+
+                function updateTime() {
+                    const now = new Date();
+                    const options = { year: 'numeric', month: 'short', day: 'numeric' };
+                    let formattedDate = now.toLocaleDateString('en-US', options).toUpperCase();
+                    formattedDate = formattedDate.replace(',', ''); // Remove comma between day and year
+                    formattedDate = formattedDate.replace(
+                        formattedDate.split(' ')[1],
+                        formattedDate.split(' ')[1].slice(0, 3)
+                    );
+                    document.getElementById('current-date').textContent = formattedDate;
+                    document.getElementById('current-time').textContent = now.toLocaleTimeString();
+                    const daysOfWeek = ['SUNDAY', 'MONDAY', 'TUESDAY', 'WEDNESDAY', 'THURSDAY', 'FRIDAY', 'SATURDAY'];
+                    document.getElementById('day-of-week').textContent = daysOfWeek[now.getDay()];
+                }
+                setInterval(updateTime, 1000);
+                updateTime();
+            </script>
+        </p>
+        <p class="copyrights">
+            <br>COPYRIGHT ©2025 THINKTROUT STUDIO.
+            <br>ALL RIGHTS RESERVED.
+            <br>CREATED BY THINKTROUT
+            <br>VERSION 1.0.0
+            <br>ANCHOR IS A WORK OF FICTION. ANY SIMILARITY TO ACTUAL PERSONS, LIVING OR DEAD, OR TO ACTUAL EVENTS IS PURELY COINCIDENTAL.
+        </p>
+        <p class="links">
+            <br><a href="https://github.com/ThinkTrout/ANCHOR" target="_blank" rel="noopener noreferrer">SOURCE CODE</a><span style="margin-right: 100px; float: left;"><a href="https://freckle-viola-d43.notion.site/ANCHOR-175673edaf0e80b28af0e56def1b3fcc" target="_blank" rel="noopener noreferrer">NOTION WIKI</a></span>
+            <br><a href="https://github.com/ThinkTrout" target="_blank" rel="noopener noreferrer">GITHUB</a><span style="margin-right: 100px; float: left;"><a href="https://discord.com/users/ThinkTrout" target="_blank" rel="noopener noreferrer">DISCORD</a></span>
+            <br><a href="https://youtube.com/@ThinkTrout" target="_blank" rel="noopener noreferrer">YOUTUBE</a><span style="margin-right: 100px; float: left;"><a href="https://x.com/ThinkTrout" target="_blank" rel="noopener noreferrer">TWITTER</a></span>
+            <br><a href="https://reddit.com/user/ThinkTrout16055" target="_blank" rel="noopener noreferrer">REDDIT</a><span style="margin-right: 100px; float: left;"><a href="https://twitch.tv/ThinkTrout" target="_blank" rel="noopener noreferrer">TWITCH</a></span>
+            <br><a href="https://instagram.com/think.trout/" target="_blank" rel="noopener noreferrer">INSTAGRAM</a><span style="margin-right: 100px; float: left;"><a href="https://thinktrout.medium.com" target="_blank" rel="noopener noreferrer">MEDIUM</a></span>
+        </p>
         <script>
-            document.getElementById('timezone').textContent = Intl.DateTimeFormat().resolvedOptions().timeZone.toUpperCase();
-            document.getElementById('browser-language').textContent = navigator.language.toUpperCase();
-
-            function updateTime() {
-                const now = new Date();
-                const options = { year: 'numeric', month: 'short', day: 'numeric' };
-                let formattedDate = now.toLocaleDateString('en-US', options).toUpperCase();
-                formattedDate = formattedDate.replace(',', ''); // Remove comma between day and year
-                formattedDate = formattedDate.replace(
-                    formattedDate.split(' ')[1],
-                    formattedDate.split(' ')[1].slice(0, 3)
-                );
-                document.getElementById('current-date').textContent = formattedDate;
-                document.getElementById('current-time').textContent = now.toLocaleTimeString();
-                const daysOfWeek = ['SUNDAY', 'MONDAY', 'TUESDAY', 'WEDNESDAY', 'THURSDAY', 'FRIDAY', 'SATURDAY'];
-                document.getElementById('day-of-week').textContent = daysOfWeek[now.getDay()];
+            function fadeOutAndRedirect() {
+                const content = document.getElementById('content');
+                if (content) {
+                    // Remove fade-in class before applying fade-out animation
+                    content.classList.remove('fade-in');
+                    content.classList.add('fade-out');
+                    setTimeout(() => {
+                        window.location.href = "{{ url_for('onboarding') }}"; // Flask will replace this with the correct path
+                    }, 500);
+                } else {
+                    window.location.href = "{{ url_for('onboarding') }}"; // fallback
+                }
             }
-            setInterval(updateTime, 1000);
-            updateTime();
         </script>
-    </p>
-    </p>
-    <p class="copyrights">
-        <br>COPYRIGHT ©2025 THINKTROUT STUDIO.
-        <br>ALL RIGHTS RESERVED.
-        <br>CREATED BY THINKTROUT
-        <br>VERSION 1.0.0
-        <br>ANCHOR IS A WORK OF FICTION. ANY SIMILARITY TO ACTUAL PERSONS, LIVING OR DEAD, OR TO ACTUAL EVENTS IS PURELY COINCIDENTAL.
-        
-    </p>
-    <p class="links">
-        <br><a href="https://github.com/ThinkTrout/ANCHOR" target="_blank" rel="noopener noreferrer">SOURCE CODE</a><span style="margin-right: 100px; float: left;"><a href="https://freckle-viola-d43.notion.site/ANCHOR-175673edaf0e80b28af0e56def1b3fcc" target="_blank" rel="noopener noreferrer">NOTION WIKI</a></span>
-        <br><a href="https://github.com/ThinkTrout" target="_blank" rel="noopener noreferrer">GITHUB</a><span style="margin-right: 100px; float: left;"><a href="https://discord.com/users/ThinkTrout" target="_blank" rel="noopener noreferrer">DISCORD</a></span>
-        <br><a href="https://youtube.com/@ThinkTrout" target="_blank" rel="noopener noreferrer">YOUTUBE</a><span style="margin-right: 100px; float: left;"><a href="https://x.com/ThinkTrout" target="_blank" rel="noopener noreferrer">TWITTER</a></span>
-        <br><a href="https://reddit.com/user/ThinkTrout16055" target="_blank" rel="noopener noreferrer">REDDIT</a><span style="margin-right: 100px; float: left;"><a href="https://twitch.tv/ThinkTrout" target="_blank" rel="noopener noreferrer">TWITCH</a></span>
-        <br><a href="https://instagram.com/thinktrout/" target="_blank" rel="noopener noreferrer">INSTAGRAM</a><span style="margin-right: 100px; float: left;"><a href="https://thinktrout.medium.com" target="_blank" rel="noopener noreferrer">MEDIUM</a></span>
-    </p>
+    </div>
 </body>
 </html>

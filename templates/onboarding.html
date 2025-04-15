@@ -1,10 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Hello World</title>
+    <meta charset="UTF-8">
+    <title>ANCHOR</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='onboarding.css') }}">
 </head>
 <body>
-  <h1>Hello, world!</h1>
+    <p class="typewriter">
+        IDEOFLUID TEMP: 22.0°C
+        IDEOFLUID MOBILITY: LOW
+    
+        OXYGEN LEVELS: 98% (3hr49m REMAINING)
+        HEART RATE: 74 BPM
+        EXTERNAL TEMP: 13.1°C
+        CORE TEMP: 37.1°C
+        MENTAL STATE: STABLE
+        EMOTIONAL SIGNATURE: CALM
+        THOUGHT CURRENT: CALM
+
+        ANCHOR STRENGTH: NORMAL
+        ANCHOR CHARGE: 88% (2h11m REMAINING)
+
+        CORAL GROWTH RATE: LATENT [0.03mm/hr]
+        PATTERN STATE: NON-AGGRESSIVE
+        ORIGIN PROFILE: TYPE B (Disassociative, Emotional)
+
+        TIDE PHASE: LOW
+        TEMPORAL FLOW: FORWARD
+        GRAVITY VARIANCE: -0.7%
+        LOCALIZED REALITY STRESS: NORMALIZED
+    </p>
+    <script>
+        window.addEventListener("DOMContentLoaded", () => {
+            const el = document.querySelector('.typewriter');
+            const text = el.innerHTML;  // Use the innerHTML for multi-line support
+            
+            const typingSpeed = 20; // 🕒 ms per character
+            const typingDelay = 500; // 💤 delay before typing (ms)
+        
+            // Hide the content initially
+            el.style.visibility = 'hidden';
+        
+            setTimeout(() => {
+                el.style.visibility = 'visible'; // Make the text visible once typing starts
+        
+                let i = 0;
+                el.innerHTML = ''; // Start with empty content
+        
+                const interval = setInterval(() => {
+                    el.innerHTML += text[i]; // Add one character at a time
+                    i++;
+            
+                    // Stop once all characters have been typed
+                    if (i === text.length) clearInterval(interval);
+                }, typingSpeed);
+            }, typingDelay); // Delay before typing starts
+        });
+    </script>
 </body>
 </html>

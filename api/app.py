@@ -7,6 +7,10 @@ app = Flask(__name__, static_folder="../static", template_folder="../templates")
 def home():
     return render_template("menu.html")
 
+@app.route('/onboarding')
+def onboarding():
+    return render_template('onboarding.html')
+
 # This is the magic line — tells Vercel to use Flask as WSGI handler
 # Do NOT wrap it in another function
 # Just expose the app directly
