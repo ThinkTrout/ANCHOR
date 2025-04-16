@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <title>ANCHOR</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/menu.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/intro.css') }}">
 </head>
 <body>
     <div id="content" class="fade-in">
         <p class="title">WELCOME TO <span style="color: #3a9cff;">ANCHOR</span>.</p>
         <p class="subtitle">THE REEF AWAITS, <em>DIVER</em>. . . HOW WILL <em>YOU</em> NAVIGATE ITS WATERS?</p>
-        <button class="button" onclick="fadeOutAndRedirect()">
+        <button class="button" id="playMusicBtn" onclick="fadeOutAndRedirect()">
             DIVE ↓
         </button>
         <p class="middle">
@@ -24,6 +24,7 @@
             <br>COPYRIGHT ©2025 THINKTROUT STUDIO.
             <br>ALL RIGHTS RESERVED.
             <br>CREATED BY THINKTROUT
+            <br>MUSIC BY NOISECREAM
             <br>VERSION 1.0.0
             <br>ANCHOR IS A WORK OF FICTION. ANY SIMILARITY TO ACTUAL PERSONS, LIVING OR DEAD, OR TO ACTUAL EVENTS IS PURELY COINCIDENTAL.
         </p>
@@ -43,12 +44,12 @@
                     content.classList.add('fade-out');
                     setTimeout(() => {
                         window.location.href = "{{ url_for('onboarding') }}"; // Flask will replace this with the correct path
-                    }, 500);
+                    }, 1000);
                 } else {
                     window.location.href = "{{ url_for('onboarding') }}"; // fallback
                 }
             }
-        </script>     
+        </script>       
     </div>
 </body>
 </html>
