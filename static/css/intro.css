@@ -15,6 +15,19 @@ body {
 	color: #000;
 }
 
+.title-area {
+	position: absolute;
+	top: 40%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: max-content;	
+	height: max-content;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
 /* Typography */
 .title, .subtitle {
 	text-align: center;
@@ -23,7 +36,6 @@ body {
 .title {
 	font-size: 100px;
 	letter-spacing: -10px;
-	margin: 250px 0 0;
 }
 
 .subtitle {
@@ -133,4 +145,20 @@ body {
 	color: #000;
 	text-align: justify;
 	visibility: hidden;
+}
+
+@media (max-width: 1366px) {
+	.game-space {
+		width: 500px;
+		height: 500px;
+	}
+
+	.title {
+		font-size:100px;
+		margin-bottom: -25px;
+	}
+
+	.subtitle {
+		margin-bottom: -25px;
+	}
 }

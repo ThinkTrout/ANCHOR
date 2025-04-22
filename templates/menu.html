@@ -1,17 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Add this in the <head> section -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="UTF-8">
     <title>ANCHOR</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/intro.css') }}">
 </head>
 <body>
     <div id="content" class="fade-in">
-        <p class="title">WELCOME TO <span style="color: #3a9cff;">ANCHOR</span>.</p>
-        <p class="subtitle">THE REEF AWAITS, <em>DIVER</em>. . . HOW WILL <em>YOU</em> NAVIGATE ITS WATERS?</p>
-        <button class="button" onclick="fadeOutAndRedirect()">
-            DIVE ↓
-        </button>
+        <div class="title-area">
+            <p class="title">WELCOME TO <span style="color: #3a9cff;">ANCHOR</span>.</p>
+            <p class="subtitle">THE REEF AWAITS, <em>DIVER</em>. . . HOW WILL <em>YOU</em> NAVIGATE ITS WATERS?</p>
+            <button class="button" onclick="fadeOutAndRedirect()">
+                DIVE ↓
+            </button>
+        </div>
         <p class="middle">
             <br>DATE <span style="margin-left: 100px; float: right;" id="current-date"></span>
             <br>TIME <span style="margin-left: 100px; float: right;" id="current-time"></span>
