@@ -198,7 +198,3 @@ body {
     width: 0%; /* Starts at 0% width */
     transition: width 0.1s ease-in-out;
 }
-
-.hidden {
-    display: none;
-}

@@ -1,12 +1,12 @@
 // ⏱️ Control how long the loading takes (in milliseconds)
-const loadingDuration = 3000; // e.g. 2 seconds
+const loadingDuration = 3000; // e.g. 3 seconds
 
 let currentPercent = 0;
 const loadingPercent = document.getElementById('loading-percent');
 const progressBar = document.getElementById('progress-bar');
-const startButton = document.getElementById('start-button');
 const loadingScreen = document.getElementById('loading-screen');
 const mainContent = document.getElementById('main-content');
+const startButton = document.querySelector('#loading-screen .button'); // Select the "START EXPERIENCE" button
 
 function fakeLoading() {
     const intervalTime = loadingDuration / 100; // Divide duration into 100 steps
@@ -18,7 +18,10 @@ function fakeLoading() {
 
         if (currentPercent >= 100) {
             clearInterval(interval); // Stop the interval when loading is complete
-            startButton.classList.remove('hidden'); // Show the "START EXPERIENCE" button
+
+            // Make the "START EXPERIENCE" button visible
+            startButton.style.opacity = 1;
+            startButton.style.pointerEvents = 'auto';
         }
     }, intervalTime);
 }
