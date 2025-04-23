@@ -57,11 +57,25 @@ body {
 	transition: transform 0.2s ease, opacity 1s ease;
 	opacity: 1;
 	pointer-events: auto;
+	cursor: none;
 }
 
 .button:hover {
 	text-decoration: underline;
 	transform: scale(1.05);
+}
+
+.button:hover::after {
+	content: attr(data-tooltip); /* 🪄 pulls text from the data-tooltip attribute */
+	position: absolute;
+	background-color: black;
+	color: white;
+	padding: 8px 12px;
+	pointer-events: none;
+	white-space: nowrap;
+	top: var(--y, 0);
+	left: var(--x, 0);
+	transform: translate(10%, 10%);
 }
 
 .button:active {
@@ -198,3 +212,4 @@ body {
     width: 0%; /* Starts at 0% width */
     transition: width 0.1s ease-in-out;
 }
+

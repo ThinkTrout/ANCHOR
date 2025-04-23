@@ -12,6 +12,10 @@ def menu():
 def onboarding():
     return render_template('onboarding.html')
 
+@app.route('/game')
+def game():
+    return render_template('game.html')
+
 @app.route('/music/<filename>')
 def music(filename):
     music_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'music'))

@@ -32,7 +32,7 @@
         <div class="progress-container">
             <div class="progress-bar" id="progress-bar"></div>
         </div>
-        <button class="button" style="opacity: 0; pointer-events: none;" onclick="startExperience(); startAudio();">
+        <button class="button" style="opacity: 0; pointer-events: none;" onclick="startExperience(); startAudio();" data-tooltip="WELCOME, DIVER.">
             START EXPERIENCE
         </button>
     </div>
@@ -42,7 +42,7 @@
         <div class="title-area">
             <p class="title">WELCOME TO <span style="color: #3a9cff;">ANCHOR</span>.</p>
             <p class="subtitle">THE REEF AWAITS, <em>DIVER</em>. . . HOW WILL <em>YOU</em> NAVIGATE ITS WATERS?</p>
-            <button class="button" onclick="fadeOutAndRedirect()">
+            <button class="button" onclick="fadeOutAndRedirect()" data-tooltip="WELCOME, DIVER.">
                 DIVE ↓
             </button>
         </div>
@@ -72,6 +72,7 @@
     </div>
 
     <script src="{{ url_for('static', filename='js/loading.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/buttonhover.js') }}"></script>
     <script>
         function fadeOutAndRedirect() {
             const content = document.getElementById('main-content');
