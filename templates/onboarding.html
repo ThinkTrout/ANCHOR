@@ -20,28 +20,5 @@
         <button class="button" style="opacity: 0; pointer-events: none;">SIGN</button>
     </div>
     <script src="{{ url_for('static', filename='js/typewriter.js') }}"></script>
-    <audio id="bg-audio" autoplay loop>
-        <source src="{{ url_for('music', filename='Noisecream-Follower.mp3') }}" type="audio/mpeg">
-        Your browser does not support the audio element.
-    </audio>
-    <!-- <script>
-        const audio = document.getElementById('bg-audio');
-
-        // Set initial volume (change this value to adjust volume)
-        const volume = 0.5;  // Volume value from 0.0 (mute) to 1.0 (full volume)
-        audio.volume = volume;
-
-        // This function starts the audio and un-mutes it
-        function startAudio() {
-            if (!localStorage.getItem('audioStarted')) {
-                audio.muted = false;  // Unmute the audio
-                audio.play().catch((err) => {
-                    console.error("Playback failed:", err);
-                });
-                localStorage.setItem('audioStarted', 'true'); // Store the audio started state in localStorage
-            }
-        }
-    </script> -->
-    
 </body>
 </html>

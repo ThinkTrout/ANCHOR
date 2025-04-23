@@ -1,14 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Add this in the <head> section -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="UTF-8">
     <title>ANCHOR</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/intro.css') }}">
 </head>
 <body>
-    <div id="content" class="fade-in">
+    <!-- Audio Player (Hidden initially) -->
+    <audio id="bg-audio" loop>
+        <source src="{{ url_for('music', filename='Noisecream-Follower.mp3') }}" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+    
+    <script>
+        // Set volume after audio is ready
+        const audio = document.getElementById('bg-audio');
+        audio.volume = 0.2; // 🎚️ Set volume from 0.0 to 1.0
+
+        // Function to start audio when user clicks "START EXPERIENCE"
+        function startAudio() {
+            audio.play(); // Start audio
+        }
+    </script>
+
+    <!-- Loading Screen (Initially hidden) -->
+    <div id="loading-screen" class="loading-screen fade-in">
+        <div class="subtitle">
+            LOADING <span id="loading-percent">0%</span>
+        </div>
+        <div class="progress-container">
+            <div class="progress-bar" id="progress-bar"></div>
+        </div>
+        <button class="button hidden" id="start-button" onclick="startExperience(); startAudio();">
+            START EXPERIENCE
+        </button>
+    </div>
+
+    <!-- Main Content (Initially hidden) -->
+    <div id="main-content" class="fade-in" style="display: none;">
         <div class="title-area">
             <p class="title">WELCOME TO <span style="color: #3a9cff;">ANCHOR</span>.</p>
             <p class="subtitle">THE REEF AWAITS, <em>DIVER</em>. . . HOW WILL <em>YOU</em> NAVIGATE ITS WATERS?</p>
@@ -39,21 +69,18 @@
             <br><a href="https://reddit.com/user/ThinkTrout16055" target="_blank" rel="noopener noreferrer">REDDIT</a><span style="margin-right: 100px; float: left;"><a href="https://twitch.tv/ThinkTrout" target="_blank" rel="noopener noreferrer">TWITCH</a></span>
             <br><a href="https://instagram.com/think.trout/" target="_blank" rel="noopener noreferrer">INSTAGRAM</a><span style="margin-right: 100px; float: left;"><a href="https://thinktrout.medium.com" target="_blank" rel="noopener noreferrer">MEDIUM</a></span>
         </p>
-        <script>
-            function fadeOutAndRedirect() {
-                const content = document.getElementById('content');
-                if (content) {
-                    // Remove fade-in class before applying fade-out animation
-                    content.classList.remove('fade-in');
-                    content.classList.add('fade-out');
-                    setTimeout(() => {
-                        window.location.href = "{{ url_for('onboarding') }}"; // Flask will replace this with the correct path
-                    }, 1000);
-                } else {
-                    window.location.href = "{{ url_for('onboarding') }}"; // fallback
-                }
-            }
-        </script>       
     </div>
+
+    <script src="{{ url_for('static', filename='js/loading.js') }}"></script>
+    <script>
+        function fadeOutAndRedirect() {
+            const content = document.getElementById('main-content');
+            content.classList.remove('fade-in');
+            content.classList.add('fade-out');
+            setTimeout(() => {
+                window.location.href = "{{ url_for('onboarding') }}";
+            }, 1000);
+        }
+    </script>
 </body>
 </html>
